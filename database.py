@@ -48,3 +48,8 @@ orders = relationship('Order',
 secondary=order_product_table, back_populates='products')
 # Create database tables
 Base.metadata.create_all(engine)
+
+# Show table names
+inspector = inspect(engine)
+print("Tables in database:")
+print(inspector.get_table_names())
